@@ -1,5 +1,7 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic import ListView
 
-def homepage(request):
-    return HttpResponse('WORKING')
+from .models import Todo
+
+class TodoListView(ListView):
+    model = Todo
+    template_name = 'todo_list.html'
