@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h1>Todo Creation form</h1>
+    <form action=""method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-primary btn-lg" value="Submit">Add</button>
+        <a class="btn btn-primary btn-lg" href="{% url 'todo_list' %}" role="button">view tasks</a>
+    </form>
+{% endblock content %}
